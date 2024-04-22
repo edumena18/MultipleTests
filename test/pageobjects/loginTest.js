@@ -53,6 +53,14 @@ class LoginPage extends bottomClass {
         return $('#postal-code');
     }
 
+    get continueButton (){
+        return $('#continue');
+    }
+
+    get finishButton (){
+        return $('[name="finish"]');
+    }
+
     get failCredsAlert () {
         return $('[data-test="error"]')
     }
@@ -103,12 +111,12 @@ class LoginPage extends bottomClass {
 
     async addItemCar(){
         await this.addItem.click()
-        await browser.pause(3000)
+        await browser.pause(1000)
     }
 
     async shopCarContainer(){
         await this.shoppingCar.click()
-        await browser.pause(3000)
+        await browser.pause(1000)
 
     }
 
@@ -122,6 +130,14 @@ class LoginPage extends bottomClass {
         await this.lastNameField.setValue(LastName)
         await this.zipCodeField.setValue(zipCode)
 
+    }
+
+    async continuePurchaseStep(){
+        (await this.continueButton).click()
+    }
+
+    async lastPurchaseStep(){
+        await this.finishButton.click()
     }
 
     /**

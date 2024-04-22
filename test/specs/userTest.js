@@ -10,6 +10,8 @@ describe('My Login application', () => {
         await LoginPage.shopCarContainer()
         await LoginPage.checkout()
         await LoginPage.yourInfo('Mark','Parker','84003')
+        await LoginPage.continuePurchaseStep()
+        await LoginPage.lastPurchaseStep()
         await LoginPage.logout()
         // await LoginPage.correctUserLogin('visual_user','secret_sauce')
         // await LoginPage.logout()
